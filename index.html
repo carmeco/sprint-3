@@ -12,25 +12,52 @@
     <!-- font awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css">
-
-    <title>ShopNow</title>
+    <!-- My styles -->
+    <link rel="stylesheet" href="css/index.css">
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="images/favicon-32x32.png" />
+    <!-- Title -->
+    <title>Super Cool Shop</title>
 </head>
 
 <body>
-    <!-- header -->
-    <header class="m-5">
-        <h1 class="text-center m-5"><i class="fas fa-shopping-cart mr-2"></i> ShopNow</h1>
-        <h3 class="text-center m-3">Welcome to your Online Shopping Store.</h3>
+    <!-- Header -->
+    <header class="min-vh-100 d-flex flex-column justify-content-end align-items-center">
+        <div class="background"></div>
+        <h1 class="mx-2 text-sm-center"></i>Super Cool Shop</h1>
+        <h3 class="mx-2 text-sm-center my-3">Welcome to your Online Shopping Store</h3>
+        <button type="button" onclick="window.location.href = 'index.html#buttons';" class="btn mt-3 mb-4 btn-go">Go</button>
     </header>
 
     <!-- Buttons -->
-    <h3 class="text-center">Select your category:</h3>
-    <div class="text-center">
-        <button type="button" onclick="window.location.href = 'grocery.html#grocery';" class="btn m-4 mt-5 btn btn-primary">Grocery</button>
-        <button type="button" onclick="window.location.href = 'grocery.html#beauty';" class="btn m-4 mt-5 btn btn-primary">Beauty</button>
-        <button type="button" onclick="window.location.href = 'grocery.html#clothes';" class="btn m-4 mt-5 btn btn-primary">Clothes</button>
-    </div>
+    <article>
+        <section id='buttons'>
+            <div class="text-center pt-5">
+                <h3>Select your category</h3>
+            </div>
+            <div class="row row-cols-auto justify-content-center align-items-center">
+                <a type="button" onclick="window.location.href = 'grocery.html#grocery';">
+                    <figure class='p-5'>
+                        <img class="img-fluid rounded-circle" src="/images/grocery.jpg">
+                        <figcaption>Grocery</figcaption>
+                    </figure>
+                </a>
+                <a type="button" onclick="window.location.href = 'grocery.html#beauty';">
+                    <figure class='p-5'> 
+                        <img class="img-fluid rounded-circle" src="/images/beauty.jpg">
+                        <figcaption>Beauty</figcaption>
+                    </figure>
+                </a>
+                <a type="button" onclick="window.location.href = 'grocery.html#clothes';">
+                    <figure class='p-5'>
+                        <img class="img-fluid rounded-circle" src="/images/clothes.jpg">
+                        <figcaption>Clothes</figcaption>
+                    </figure>
+                </a>
+            </div>
+        </section>
+    </article>
+
 
     <!-- script tags -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

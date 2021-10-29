@@ -1,4 +1,54 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins');
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+
+
+/* Theme colors */
+:root {
+    --light-shades: #F5F6F5;
+    --light-accent: #BEA2B4;
+    --main: #E5A675;
+    --dark-accent: #A67B95;
+    --dark-shades: #574E62;
+}
+
+
+/* Global font style */
+
 body{
     font-family: Poppins;
+    color: var(--dark-shades);
+    background-color: var(--light-shades);
+}
+
+
+/* Headings tags */
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: Abril Fatface;
+}
+h1 {
+    font-size: 4rem;
+}
+h3 {
+    font-size: 1.5rem;
+}
+
+
+/* Lists */
+
+ul{
+    list-style: none;
+    padding-left: 0;
+}
+
+
+/* Buttons */
+
+.btn-basic {
+    background-color: var(--main);
+    color: var(--light-shades);
+}
+.btn-basic:hover {
+    color: var(--dark-shades);
+    border: 1px solid var(--dark-shades);
 }
