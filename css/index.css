@@ -1,0 +1,106 @@
+@import url(style.css);
+
+
+/* Header */
+
+header {
+    position: relative;
+}
+header .background{
+    background-image: url(../images/welcome.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: -1;
+    opacity: 0.7;
+}
+header h1 {
+    color: var(--main);  
+    text-shadow: 2px 2px var(--dark-shades);
+}
+header h3 {
+    color: var(--light-accent);
+    text-shadow: 1px 1px var(--dark-shades);
+}
+.btn-go {
+    background-color: var(--dark-accent);
+    color: white;
+    text-transform: uppercase;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    opacity: 0.8;
+}
+.btn-go:hover {
+    color: white;
+    opacity: 1;
+}
+
+
+/* Buttons section */
+
+#buttons {
+    overflow-x: hidden;
+}
+#buttons figure {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#buttons img {
+    filter: grayscale(0.5);
+}
+#buttons figcaption {
+    position: absolute;
+    font-size: 2rem;
+    color: var(--light-shades);
+    text-shadow: 0 0 5px var(--dark-shades);
+}
+#buttons img:hover{
+   filter: grayscale(0);
+}
+
+
+/* Media queries */
+
+@media (min-width: 576px){
+    h1 {
+        font-size: 6rem;
+    }
+    h3 {
+        font-size: 2rem;
+    }
+    .btn-go {
+        font-size: 1.5rem;
+        width: 100px;
+        height: 100px;
+    }
+}
+@media (min-width: 768px){
+    h1 {
+        font-size: 8rem;
+    }
+    h3 {
+        font-size: 2.5rem;
+    }
+    .btn-go {
+        width: 120px;
+        height: 120px;
+    }
+}
+@media (min-width: 1400px){
+    h1 {
+        font-size: 12rem;
+    }
+    h3 {
+        font-size: 2.5rem;
+    }
+    .btn-go {
+        font-size: 2rem;
+        width: 150px;
+        height: 150px;
+    }
+}

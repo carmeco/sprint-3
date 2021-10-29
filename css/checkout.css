@@ -1,8 +1,13 @@
-@import url('https://fonts.googleapis.com/css?family=Poppins');
+@import url(style.css);
 
-body {
-    font-family: Poppins;
+
+/* Forms */
+
+.invalid {
+    border: 1px solid red;
 }
-#errorPassword, #errorName, #errorPhone {
-    display: none;
+.errorMessage {
+    color: red;
+    font-size: 15px;
+    width: 100%;
 }
