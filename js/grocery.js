@@ -126,7 +126,7 @@ function calculateTotal() {
 function generateCart() {
     cartList.forEach((item) => {
         let repeatedProduct = cart.find((product) => item.id === product.id);
-        if (repeatedProduct == undefined) {
+        if (!repeatedProduct) {
             cart.push({
                 ...item,
                 quantity: 1,
@@ -148,20 +148,20 @@ function generateCart() {
 function applyPromotionsCart() {
     let cookingOil = cart.find((product) => product.id === 1);
     let cupcakeMixture = cart.find((product) => product.id === 3);
-    if (cookingOil != undefined && cookingOil.quantity >= 3) {
+    if (cookingOil && cookingOil.quantity >= 3) {
         cookingOil.subtotalWithDiscont = function() {
             return this.quantity*10;
         }    
-    } else if (cookingOil!=undefined) {
+    } else if (cookingOil) {
         cookingOil.subtotalWithDiscont = function() {
             return this.subtotal();
         } 
     }
-    if (cupcakeMixture!=undefined && cupcakeMixture.quantity >= 10) {
+    if (cupcakeMixture && cupcakeMixture.quantity >= 10) {
         cupcakeMixture.subtotalWithDiscont = function() {
             return this.subtotal()*2/3;
         }    
-    } else if (cupcakeMixture!=undefined) {
+    } else if (cupcakeMixture) {
         cupcakeMixture.subtotalWithDiscont = function() {
             return this.subtotal();
         }
@@ -173,8 +173,7 @@ function applyPromotionsCart() {
 function addToCart(id) {
     let selectedItem = products.find((item) => item.id === id);
     let repeatedProduct = cart.find((product) => selectedItem.id === product.id);
-
-    if (repeatedProduct == undefined) {
+    if (!repeatedProduct) {
         cart.push({
             ...selectedItem,
             quantity: 1,
@@ -195,7 +194,6 @@ function addToCart(id) {
 function removeFromCart(id) {
     let itemIndex = cart.findIndex((product) => product.id === id);
     let item = cart[itemIndex];
-
     if (item.quantity > 1) {
         item.quantity -= 1;
     } else {
@@ -213,19 +211,15 @@ function printCart() {
         list.appendChild(listItem);
         listItem.setAttribute('id', `item${product.id}`);
         listItem.innerHTML = product.name;
-
         let counter = document.createElement('div');
         listItem.appendChild(counter);
-
         let plusBtn = document.createElement('button');
         let minusBtn = document.createElement('button');
         let productQuantity = document.createElement('span');
         counter.append(minusBtn, productQuantity, plusBtn);
-
         plusBtn.innerHTML = "+";
         minusBtn.innerHTML = "-";
         productQuantity.innerHTML = product.quantity;
-
         plusBtn.setAttribute('onclick', `addToCart(${product.id}); reloadItem(${product.id}); reloadTotal()`);
         minusBtn.setAttribute('onclick', `removeFromCart(${product.id}); reloadItem(${product.id}), reloadTotal()`);
     })
@@ -244,7 +238,8 @@ function reloadItem(id) {
     let selectedProduct = cart.find((product) => product.id === id);
     let itemTag = document.querySelector(`#item${id}`);
     let itemQuantityTag = itemTag.querySelector('span');
-    if (selectedProduct == undefined) {
+    if (!selectedProduct) {
+
         itemTag.remove();
     } else {
         itemQuantityTag.innerHTML = selectedProduct.quantity;
